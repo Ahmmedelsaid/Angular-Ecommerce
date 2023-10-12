@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3 mx-auto">
+      <div class="product-card">
+        <img
+          src="{{ data.image }}"
+          class="product-image"
+          alt="{{ data.title }}"
+        />
+        <div class="product-details">
+          <h2 class="product-title">{{ data.title }}</h2>
+          <p class="product-description">{{ data.description }}</p>
+          <p class="product-price">{{ data.price }}$</p>
+          <p class="product-category">Category: {{ data.category }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

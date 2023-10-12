@@ -1,0 +1,51 @@
+<div class="box mt5">
+  <div class="my-2 mx-2">
+    <label for="cate" class="mt-2">Categories:</label>
+    <select id="cate" class="form-control w-25" (change)="filterCate($event)">
+      <option value="All" selected>All Categories</option>
+      <option value="{{ category }}" *ngFor="let category of categories">
+        {{ category }}
+      </option>
+    </select>
+  </div>
+  <div *ngIf="isFetching" class="text-center w-100">
+    <div class="lds-spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <div class="container mt-5" *ngIf="!isFetching">
+    <div class="row">
+      <div
+        class="col-xs-12 col-lg-4 col-md-6 mb-4"
+        *ngFor="let product of products"
+        routerLink="/Product-Details/{{ product.id }}"
+      >
+        <div class="card">
+          <img
+            src="{{ product.image }}"
+            class="card-img-top"
+            alt="Product Image"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ product.title }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+          </div>
+          <div class="card-footer d-flex flex-column">
+            <span class="m-auto mb-2">{{ product.price }}$</span>
+            <button class="btn btn-primary" (click)="addtoCart(product)">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

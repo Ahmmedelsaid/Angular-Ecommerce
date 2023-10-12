@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row mt-2">
+    <h2>My Cart</h2>
+    <div
+      class="card col-xs-12 col-lg-4 col-md-6 mb-4 mx-2"
+      *ngFor="let item of cartItems"
+    >
+      <img src="{{ item.image }}" class="card-img-top" alt="Product Image" />
+      <div class="card-body">
+        <h5 class="card-title" style="font-weight: bold">{{ item.title }}</h5>
+        <span class="m-auto mb-2">Price:{{ item.price }}$</span>
+      </div>
+    </div>
+  </div>
+  <button
+    class="btn btn-danger w-25 mb-2"
+    (click)="clearItems()"
+    *ngIf="cartItems.length > 0"
+  >
+    Clear Cart
+  </button>
+</div>

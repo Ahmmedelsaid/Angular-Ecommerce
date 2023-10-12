@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ae-store-550db": {
+      "hosting": {
+        "E-Commerce": [
+          "ae-store-550db"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ae-store-550db"
+  }
+}

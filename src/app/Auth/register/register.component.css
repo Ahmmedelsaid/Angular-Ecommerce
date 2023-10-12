@@ -1,0 +1,51 @@
+/* Global styles for the page */
+body {
+  background-color: #f2f2f2; /* Background color for the entire page */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Luxurious font */
+}
+
+.container {
+  margin-top: 50px; /* Add some top margin to center the form vertically */
+}
+
+/* Form input styles */
+.custom-input {
+  background-color: #fff; /* White input background */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Spacing around input fields */
+  font-size: 16px; /* Font size */
+}
+.form-group {
+  margin-bottom: 15px;
+}
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+/* Help text for input validation */
+.custom-help {
+  color: red; /* Red color for error messages */
+  font-size: 14px; /* Font size */
+}
+
+/* Login button styles */
+.custom-button {
+  background-color: #bd0a4f; /* Button background color */
+  color: #fff; /* Text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Spacing inside the button */
+  font-size: 18px; /* Font size */
+  cursor: pointer; /* Add pointer cursor on hover */
+  margin-bottom: 10px;
+}
+
+.custom-button:hover {
+  background-color: #bd3562;
+}
+p {
+  font-size: 16px;
+}
+a {
+  text-decoration: none;
+}

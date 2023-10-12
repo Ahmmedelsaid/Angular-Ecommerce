@@ -1,0 +1,47 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-nav-list>
+      <a mat-list-item routerLink="/Products">
+        <mat-icon aria-label="Products" class="list-icon"
+          >shopping_products</mat-icon
+        >
+        <span class="list-text">Products</span>
+      </a>
+      <a mat-list-item routerLink="/Cart">
+        <mat-icon aria-label="Cart" class="list-icon">shopping_cart</mat-icon>
+        <span class="list-text">Cart</span>
+      </a>
+      <a mat-list-item routerLink="/Login" *ngIf="!(isLoggedIn$ | async)">
+        <mat-icon aria-label="Login" class="list-icon">person</mat-icon>
+        <span class="list-text">Login</span>
+      </a>
+      <a mat-list-item (click)="logout()" *ngIf="isLoggedIn$ | async">
+        <mat-icon aria-label="Login" class="list-icon">logout</mat-icon>
+        <span class="list-text">Logout</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <mat-icon aria-label="Store icon">store</mat-icon>
+      <span>AE Store</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

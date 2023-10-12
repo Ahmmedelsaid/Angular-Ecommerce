@@ -1,0 +1,12 @@
+img {
+  max-width: 100%;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px 5px 0 0;
+}
+btn {
+  background-color: #bd0a4f;
+}
